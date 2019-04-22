@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<addon
+  id="imagedecoder.svg"
+  version="0.0.1"
+  name="SVG image decoder"
+  provider-name="sarbes">
+  <requires>@ADDON_DEPENDS@</requires>
+  <extension
+    point="kodi.imagedecoder"
+    library_@PLATFORM@="@LIBRARY_FILENAME@"
+    extension=".svg"
+    mimetype="image/svg+xml|image/svg"/>
+    <!--mimetype="image/svg+xml|image/svg|text/plain|application/octet-stream"/>-->
+  <extension point="xbmc.addon.metadata">
+    <summary>NanoSVG based image decoder</summary>
+    <description>NanoSVG based image decoder</description>
+    <platform>@PLATFORM@</platform>
+  </extension>
+</addon>
