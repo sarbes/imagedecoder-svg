@@ -42,7 +42,7 @@ public:
 
   virtual ~MPOPicture()
   {
-	  nsvgDelete(image);
+    nsvgDelete(image);
     nsvgDeleteRasterizer(rast);
   }
 
@@ -77,7 +77,7 @@ public:
 
 private:
   struct NSVGimage* image;
-	struct NSVGrasterizer* rast = nsvgCreateRasterizer();
+  struct NSVGrasterizer* rast = nsvgCreateRasterizer();
 };
 
 class CMyAddon : public kodi::addon::CAddonBase
