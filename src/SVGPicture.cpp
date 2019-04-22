@@ -32,15 +32,15 @@ extern "C" {
 #include "../lib/nanosvg/nanosvgrast.h"
 }
 
-class MPOPicture : public kodi::addon::CInstanceImageDecoder
+class SVGPicture : public kodi::addon::CInstanceImageDecoder
 {
 public:
-  MPOPicture(KODI_HANDLE instance)
+  SVGPicture(KODI_HANDLE instance)
     : CInstanceImageDecoder(instance)
   {
   }
 
-  virtual ~MPOPicture()
+  virtual ~SVGPicture()
   {
     nsvgDelete(image);
     nsvgDeleteRasterizer(rast);
@@ -86,7 +86,7 @@ public:
   CMyAddon() { }
   virtual ADDON_STATUS CreateInstance(int instanceType, std::string instanceID, KODI_HANDLE instance, KODI_HANDLE& addonInstance) override
   {
-    addonInstance = new MPOPicture(instance);
+    addonInstance = new SVGPicture(instance);
     return ADDON_STATUS_OK;
   }
 };
